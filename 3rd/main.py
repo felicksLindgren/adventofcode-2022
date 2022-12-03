@@ -19,7 +19,11 @@ def Part2(backpacks):
     sumOfBadges = 0
 
     for group in (backpacks[pos:pos + 3] for pos in range(0, len(backpacks), 3)):
-        badge = set(group[0]) & set(group[1]) & set(group[2])
+        first = group[0]
+        second = group[1]
+        third = group[2]
+
+        badge = set(first) & set(second) & set(third)
         sumOfBadges += string.ascii_letters.index(list(badge)[0]) + 1
 
     print(sumOfBadges)
