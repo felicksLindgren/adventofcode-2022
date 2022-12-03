@@ -8,10 +8,10 @@ def Part1(backpacks):
         first = list(backpack[:halfwaypoint])
         second = list(backpack[halfwaypoint:])
 
-        for character in first:
-            if character in second:
-                sumOfPriorities += string.ascii_letters.index(character) + 1
-                break
+        match = set(first) & set(second)
+        
+        if match:
+            sumOfPriorities += string.ascii_letters.index(list(match)[0]) + 1
 
     print(sumOfPriorities)
 
