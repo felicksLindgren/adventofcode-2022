@@ -5,7 +5,39 @@
 # Y means you need to end the round in a draw,
 # and Z means you need to win
 
-def CalculateTournament(rounds):
+def Part1(rounds):
+    totalScore = 0
+
+    for round in rounds:
+        opponent = round[0]
+        player = round[2]
+
+        if opponent == 'A':
+            if player == 'X':
+                totalScore += 4
+            if player == 'Y':
+                totalScore += 8
+            if player == 'Z':
+                totalScore += 3
+        if opponent == 'B':
+            if player == 'X':
+                totalScore += 1
+            if player == 'Y':
+                totalScore += 5
+            if player == 'Z':
+                totalScore += 9
+        if opponent == 'C':
+            if player == 'X':
+                totalScore += 7
+            if player == 'Y':
+                totalScore += 2
+            if player == 'Z':
+                totalScore += 6
+    
+    print(totalScore)
+
+
+def Part2(rounds):
     totalScore = 0
 
     for round in rounds:
@@ -40,4 +72,5 @@ def CalculateTournament(rounds):
 if __name__ == "__main__":
     with open('./input.txt') as f:
         lines = f.read().splitlines()
-        CalculateTournament(lines)
+        Part1(lines)
+        Part2(lines)
