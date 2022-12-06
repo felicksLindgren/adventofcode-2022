@@ -1,7 +1,7 @@
 def solution(buffer, amount):
     for index, character in enumerate(buffer[1:]):
-        nextFour = buffer[index:index+amount]
-        if len(set(nextFour)) == amount:
+        next_amount_of_characters = buffer[index:index+amount]
+        if len(set(next_amount_of_characters)) == amount:
             return index + amount
 
 if __name__ == "__main__":
