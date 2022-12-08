@@ -1,5 +1,3 @@
-
-
 def Part1(grid):
     amount_of_visible = ((len(grid) - 1) * 2) + ((len(grid[0]) - 1) * 2)
 
